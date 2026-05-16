@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a0a1f" />
+  <title>For Cheloja — A Love in Motion</title>
+  <meta name="description" content="A cinematic monthsary letter for Cheloja, from Michael." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ===========================================================
+       LOADING SCREEN
+       =========================================================== -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__ring"></div>
+      <p class="loader__text">Loading something made with love…</p>
+    </div>
+  </div>
+
+  <!-- ===========================================================
+       THREE.JS DREAMY BACKGROUND CANVAS
+       =========================================================== -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===========================================================
+       AMBIENT GLOW LAYERS
+       =========================================================== -->
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient__glow ambient__glow--rose"></span>
+    <span class="ambient__glow ambient__glow--violet"></span>
+    <span class="ambient__glow ambient__glow--gold"></span>
+  </div>
+
+  <!-- ===========================================================
+       FLOATING MUSIC PLAYER
+       =========================================================== -->
+  <button
+    id="music-toggle"
+    class="music-player"
+    aria-pressed="false"
+    aria-label="Play background music"
+  >
+    <span class="music-player__eq" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </span>
+    <span class="music-player__label">Play our song</span>
+  </button>
+  <audio id="bg-audio" loop preload="none">
+    <!-- Replace this MP3 with your own (see assets/music/README.txt) -->
+    <source src="assets/music/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ===========================================================
+       HERO — CINEMATIC OPENING
+       =========================================================== -->
+  <section class="hero" id="hero">
+    <!-- Cinematic text sequence -->
+    <div class="hero__sequence" id="hero-sequence" aria-live="polite">
+      <h2 class="hero__line" data-line="0">Hi Love <span class="heart">♡</span></h2>
+      <h2 class="hero__line" data-line="1">I made something for you.</h2>
+      <h2 class="hero__line" data-line="2">Because every moment with you…</h2>
+      <h2 class="hero__line" data-line="3">…deserves to be remembered.</h2>
+    </div>
+
+    <!-- Reveal -->
+    <div class="hero__reveal" id="hero-reveal">
+      <p class="hero__eyebrow">For Cheloja, from Michael</p>
+      <h1 class="hero__title">
+        <span>Happy</span>
+        <span class="hero__title--accent">Monthsary</span>
+      </h1>
+      <p class="hero__quote">
+        <em>“The moment your smile became my favorite sight.”</em>
+      </p>
+
+      <!-- Glass counter card -->
+      <div class="counter-card glass" id="counter-card">
+        <p class="counter-card__caption">Every second with you is my favorite.</p>
+        <div class="counter" role="group" aria-label="Time we've been together">
+          <div class="counter__unit"><span class="counter__num" id="c-months">0</span><span class="counter__label">months</span></div>
+          <div class="counter__unit"><span class="counter__num" id="c-days">0</span><span class="counter__label">days</span></div>
+          <div class="counter__unit"><span class="counter__num" id="c-hours">0</span><span class="counter__label">hours</span></div>
+          <div class="counter__unit"><span class="counter__num" id="c-minutes">0</span><span class="counter__label">minutes</span></div>
+          <div class="counter__unit"><span class="counter__num" id="c-seconds">0</span><span class="counter__label">seconds</span></div>
+        </div>
+        <p class="counter-card__since">Since August 27, 2022</p>
+      </div>
+
+      <a href="#letter" class="scroll-indicator" aria-label="Scroll to letter">
+        <span class="scroll-indicator__dot"></span>
+        <span class="scroll-indicator__text">scroll</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===========================================================
+       LOVE LETTER
+       =========================================================== -->
+  <section class="letter" id="letter">
+    <div class="section-heading reveal">
+      <p class="eyebrow">a letter — written slowly, meant deeply</p>
+      <h2>For you, love ❤️</h2>
+    </div>
+
+    <article class="letter__card glass reveal">
+      <p class="letter__typed" id="letter-typed"></p>
+      <p class="letter__sign">— always yours, Michael</p>
+    </article>
+  </section>
+
+  <!-- ===========================================================
+       TIMELINE
+       =========================================================== -->
+  <section class="timeline" id="timeline">
+    <div class="section-heading reveal">
+      <p class="eyebrow">moments I never want to forget</p>
+      <h2>Our Timeline</h2>
+    </div>
+
+    <div class="timeline__track">
+      <div class="timeline__line" aria-hidden="true"></div>
+
+      <div class="timeline__item reveal">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card glass">
+          <p class="timeline__date">August 2022</p>
+          <h3 class="timeline__title">The first hello</h3>
+          <p class="timeline__story">
+            The night the world quietly rearranged itself around you. A simple message,
+            a slow grin — and somehow, I already knew.
+          </p>
+          <div class="timeline__img" data-img="image-1">
+            <span class="img-placeholder">replace with assets/images/image-1.jpg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card glass">
+          <p class="timeline__date">First call</p>
+          <h3 class="timeline__title">Your voice, my favorite sound</h3>
+          <p class="timeline__story">
+            We talked until the sun forgot to rise. I remember every laugh —
+            and the silence between them, which felt like home.
+          </p>
+          <div class="timeline__img" data-img="image-2">
+            <span class="img-placeholder">replace with assets/images/image-2.jpg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card glass">
+          <p class="timeline__date">First date</p>
+          <h3 class="timeline__title">The day my hands wouldn’t stop shaking</h3>
+          <p class="timeline__story">
+            You walked in and the room rearranged its light around you.
+            I tried to play it cool. I don’t think I did.
+          </p>
+          <div class="timeline__img" data-img="image-3">
+            <span class="img-placeholder">replace with assets/images/image-3.jpg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card glass">
+          <p class="timeline__date">A laugh I’ll keep forever</p>
+          <h3 class="timeline__title">The moment your smile became my favorite sight</h3>
+          <p class="timeline__story">
+            You laughed at something nobody else found that funny, and the whole
+            year softened. That second is folded somewhere inside me, permanently.
+          </p>
+          <div class="timeline__img" data-img="image-4">
+            <span class="img-placeholder">replace with assets/images/image-4.jpg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal">
+        <div class="timeline__dot" aria-hidden="true"></div>
+        <div class="timeline__card glass">
+          <p class="timeline__date">Today</p>
+          <h3 class="timeline__title">Still choosing you</h3>
+          <p class="timeline__story">
+            Every quiet morning. Every long night. Every ordinary Tuesday.
+            I keep choosing you — and somehow, it never feels like a choice. Just truth.
+          </p>
+          <div class="timeline__img" data-img="image-5">
+            <span class="img-placeholder">replace with assets/images/image-5.jpg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================================
+       WHY I LOVE YOU
+       =========================================================== -->
+  <section class="reasons" id="reasons">
+    <div class="section-heading reveal">
+      <p class="eyebrow">a few, of infinitely many</p>
+      <h2>Why I Love You</h2>
+    </div>
+
+    <div class="reasons__grid">
+      <article class="reason-card glass tilt reveal">
+        <span class="reason-card__icon" aria-hidden="true">✦</span>
+        <h3>Your smile</h3>
+        <p>It begins quietly, and then it takes the whole room with it. It’s my favorite weather.</p>
+      </article>
+      <article class="reason-card glass tilt reveal">
+        <span class="reason-card__icon" aria-hidden="true">✿</span>
+        <h3>Your voice</h3>
+        <p>The most familiar sound in the world. I’d know it in a crowd, in a dream, in another life.</p>
+      </article>
+      <article class="reason-card glass tilt reveal">
+        <span class="reason-card__icon" aria-hidden="true">❀</span>
+        <h3>Your patience</h3>
+        <p>You meet my chaos with quiet, and somehow my edges stop being sharp around you.</p>
+      </article>
+      <article class="reason-card glass tilt reveal">
+        <span class="reason-card__icon" aria-hidden="true">✺</span>
+        <h3>The way you care</h3>
+        <p>In small, ordinary, devastating ways. Things I didn’t know I needed until you did them.</p>
+      </article>
+      <article class="reason-card glass tilt reveal">
+        <span class="reason-card__icon" aria-hidden="true">✧</span>
+        <h3>The peace you give me</h3>
+        <p>You quiet a noise I had been living with for so long I forgot it was there.</p>
+      </article>
+      <article class="reason-card glass tilt reveal">
+        <span class="reason-card__icon" aria-hidden="true">❁</span>
+        <h3>The way you say my name</h3>
+        <p>Like it’s a soft place. Like it belongs to you. Honestly — it does.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===========================================================
+       GALLERY
+       =========================================================== -->
+  <section class="gallery" id="gallery">
+    <div class="section-heading reveal">
+      <p class="eyebrow">a few stolen frames</p>
+      <h2>Us, in pictures</h2>
+    </div>
+
+    <div class="gallery__grid">
+      <figure class="gallery__item reveal" data-src="assets/images/photo-1.jpg">
+        <div class="gallery__placeholder">photo-1.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-2.jpg">
+        <div class="gallery__placeholder">photo-2.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-3.jpg">
+        <div class="gallery__placeholder">photo-3.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-4.jpg">
+        <div class="gallery__placeholder">photo-4.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-5.jpg">
+        <div class="gallery__placeholder">photo-5.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-6.jpg">
+        <div class="gallery__placeholder">photo-6.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-7.jpg">
+        <div class="gallery__placeholder">photo-7.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-8.jpg">
+        <div class="gallery__placeholder">photo-8.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-9.jpg">
+        <div class="gallery__placeholder">photo-9.jpg</div>
+      </figure>
+      <figure class="gallery__item reveal" data-src="assets/images/photo-10.jpg">
+        <div class="gallery__placeholder">photo-10.jpg</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close">×</button>
+    <img id="lightbox-img" alt="" />
+  </div>
+
+  <!-- ===========================================================
+       SECRET EASTER EGG
+       =========================================================== -->
+  <button
+    id="secret"
+    class="secret-egg"
+    aria-label="A small secret — press if you’re curious"
+    title="press me"
+  >
+    <span class="secret-egg__heart">♡</span>
+  </button>
+
+  <div class="secret-overlay" id="secret-overlay" aria-hidden="true">
+    <p class="secret-overlay__text">I will always choose you <span>❤</span></p>
+  </div>
+
+  <!-- ===========================================================
+       FINAL SECTION
+       =========================================================== -->
+  <section class="finale" id="finale">
+    <div class="finale__inner">
+      <h2 class="finale__line finale__step" data-delay="0">And if I had to live my life again…</h2>
+      <h2 class="finale__line finale__step" data-delay="2400">I would still choose you.</h2>
+      <p class="finale__again finale__step finale__heartbeat" data-delay="4600">Again.</p>
+      <p class="finale__again finale__step finale__heartbeat" data-delay="6000">And again.</p>
+      <p class="finale__again finale__step finale__heartbeat" data-delay="7400">And again.</p>
+      <p class="finale__callback finale__step" data-delay="10200">And your smile is still my favorite sight.</p>
+      <h2 class="finale__love finale__step" data-delay="13000">I love you, loveee ko <span class="heart">♡</span></h2>
+      <p class="finale__sign finale__step" data-delay="14600">— always yours, Michael</p>
+      <p class="finale__date finale__step" data-delay="16000">27.08.2022 — and every day since.</p>
+    </div>
+  </section>
+
+  <!-- Libraries (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
