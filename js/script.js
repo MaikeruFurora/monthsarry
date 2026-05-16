@@ -279,6 +279,9 @@ async function playHeroSequence() {
     return;
   }
 
+  // Initial breath — gives her a moment to tap "Play our song" before the letter begins.
+  await wait(2000);
+
   // Show each line in turn
   for (let i = 0; i < lines.length && i < CONFIG.heroLines.length; i++) {
     const conf = CONFIG.heroLines[i];
