@@ -24,28 +24,33 @@ const CONFIG = {
 
   // The typed love letter
   letter: [
-    "To my favorite person ❤️^1000<br><br>",
+    "To my favorite person ❤️^1100<br><br>",
 
-    "I never thought someone could make my world feel softer, calmer, and brighter just by existing in it — ^500then I met you.^1100<br><br>",
+    "Hindi ko inexpect na may isang tao na kayang gawing mas tahimik, mas masaya, at mas okay yung mundo ko just by being here… ^500tapos dumating ka.^1200<br><br>",
 
-    "Somehow, in the middle of ordinary days,^400 you became my favorite part of life.^700<br>",
-    "The first person I want to talk to.^500<br>",
-    "The one I think about before I sleep.^500<br>",
-    "The reason random moments suddenly feel special.^1000<br><br>",
+    "Ewan ko paano nangyari pero naging favorite part ka na ng araw ko.^800<br>",
+    "Ikaw yung una kong gustong kausap.^500<br>",
+    "Ikaw yung naiisip ko bago matulog.^500<br>",
+    "At ikaw yung dahilan bakit kahit simpleng moments parang special na.^1100<br><br>",
 
-    "Thank you for being my peace in noisy days,^500<br>",
-    "my comfort when life gets heavy,^500<br>",
-    "and my happiness in ways words can barely explain.^1000<br><br>",
+    "Thank you kasi kahit hindi mo napapansin,^300 ang gaan mo sa buhay ko.^900<br>",
+    "Kapag pagod ako,^200 ikaw pahinga ko.^500<br>",
+    "Kapag magulo isip ko,^200 ikaw yung takbuhan ko.^500<br>",
+    "At kapag wala akong gana sa lahat,^300 somehow napapangiti mo pa rin ako.^1100<br><br>",
 
-    "Every memory with you feels like something I want to keep forever.^700<br>",
-    "Every laugh,^200 every late-night conversation,^200 every little moment with you became a part of me.^1100<br><br>",
+    "Ang dami nating simpleng moments pero honestly,^300 ayoko makalimutan kahit isa.^900<br>",
+    "Yung mga usapan natin hanggang madaling araw,^500<br>",
+    "yung random na tawanan,^500<br>",
+    "yung mga lambing mo,^500<br>",
+    "at kahit yung simpleng presence mo lang.^1100<br><br>",
 
-    "And if there’s one thing I want you to always remember,^600<br>",
-    "it’s this:^1000<br><br>",
+    "Hindi man ako perfect sa words minsan,^400 pero gusto ko malaman mo na sobrang importante mo sakin.^1200<br><br>",
 
-    "No matter how many days pass,^500<br>",
-    "no matter how busy life gets,^500<br>",
-    "I will always choose you.^1000<br><br>",
+    "And if may isang bagay na gusto kong tandaan mo palagi,^500 eto yun:^1000<br><br>",
+
+    "Kahit ilang months pa dumaan,^500<br>",
+    "kahit gaano ka-busy ang life,^500<br>",
+    "ikaw at ikaw pa rin pipiliin ko.^1100<br><br>",
 
     "Again.^600<br>",
     "And again.^600<br>",
