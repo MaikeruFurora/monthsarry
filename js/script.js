@@ -75,10 +75,54 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     const loader = $("#loader");
     loader.classList.add("hidden");
-    // Kick off the cinematic opening
-    playHeroSequence();
+    // Show the "Press play to begin" gate; once dismissed, the cinematic opening starts.
+    showBeginGate();
   }, 700);
 });
+
+/* ---------------------------------------------------------------
+   BEGIN GATE — the first tap. Solves browser autoplay-block and
+   gives Cheloja a clear "this is where it starts" moment.
+   --------------------------------------------------------------- */
+function showBeginGate() {
+  const gate    = $("#begin-gate");
+  const playBtn = $("#begin-button");
+  const skipBtn = $("#begin-skip");
+  if (!gate || !playBtn) { playHeroSequence(); return; }
+
+  let dismissed = false;
+  async function dismiss(withMusic) {
+    if (dismissed) return;
+    dismissed = true;
+
+    if (withMusic) {
+      const audio = $("#bg-audio");
+      const musicBtn = $("#music-toggle");
+      try {
+        await audio.play();
+        if (musicBtn) {
+          musicBtn.classList.add("is-playing");
+          musicBtn.setAttribute("aria-pressed", "true");
+          const lbl = musicBtn.querySelector(".music-player__label");
+          if (lbl) lbl.textContent = "Now playing";
+        }
+      } catch (err) {
+        // Song missing or playback blocked — proceed silently.
+      }
+    }
+
+    gate.classList.add("is-dismissed");
+    gate.setAttribute("aria-hidden", "true");
+    // Small overlap so the fade-out doesn't fight the first line of the sequence.
+    setTimeout(() => playHeroSequence(), 600);
+  }
+
+  playBtn.addEventListener("click", () => dismiss(true));
+  if (skipBtn) skipBtn.addEventListener("click", () => dismiss(false));
+
+  // Safety net: if she ignores the screen for 18 seconds, start anyway (no music).
+  setTimeout(() => dismiss(false), 18000);
+}
 
 /* ---------------------------------------------------------------
    LENIS — buttery smooth scrolling (single RAF driver)
@@ -279,8 +323,8 @@ async function playHeroSequence() {
     return;
   }
 
-  // Initial breath — gives her a moment to tap "Play our song" before the letter begins.
-  await wait(2000);
+  // Tiny breath after the gate dismisses so the fade-out finishes cleanly.
+  await wait(400);
 
   // Show each line in turn
   for (let i = 0; i < lines.length && i < CONFIG.heroLines.length; i++) {

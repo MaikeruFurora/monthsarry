@@ -31,6 +31,21 @@
   </div>
 
   <!-- ===========================================================
+       BEGIN GATE — first-tap overlay so music can play
+       =========================================================== -->
+  <div id="begin-gate" class="begin-gate" aria-hidden="false">
+    <div class="begin-gate__inner">
+      <p class="begin-gate__eyebrow">a small ritual</p>
+      <button id="begin-button" class="begin-button glass" type="button" aria-label="Press play to begin">
+        <span class="begin-button__icon" aria-hidden="true">▶</span>
+        <span class="begin-button__label">Press play to begin</span>
+      </button>
+      <p class="begin-gate__hint">turn your sound on, love <span class="heart">♡</span></p>
+      <button id="begin-skip" class="begin-gate__skip" type="button">continue without music</button>
+    </div>
+  </div>
+
+  <!-- ===========================================================
        THREE.JS DREAMY BACKGROUND CANVAS
        =========================================================== -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
